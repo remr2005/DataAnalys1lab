@@ -1,5 +1,16 @@
 from functools import lru_cache
 
+def gcd_eight(m):
+    try:
+        m = m<<0
+    except Exception as e:
+        print(f"incorrect input, error:{e}")
+        return
+    if not (99999 >= m >= 10000 or -99999 >= m >= -10000):
+        print("incorrect input")
+        return
+    return binary_alg(8,m)
+
 # Binary algorithm for finding GCD(Greatest Common Divisor)
 @lru_cache()
 def binary_alg(m: int,n:int):
@@ -23,3 +34,19 @@ def binary_alg(m: int,n:int):
 # look like .......1, so 1 & 1 equal 1
 def is_even(n: int):
     return True if n & 1 == 0 else False
+
+def sub(a,b):
+    res = ""
+    buf = 0
+    while(a>0):
+        buf = buf^(a&1)
+        if a&1==0 and b&1==1:
+            buf = buf^(b&1)
+        else:
+            res.join([str(buf)])
+            buf = 0
+        a = a>>1
+        b = b>>1
+        print(buf)
+        res.join([str(buf)])
+    return int(res[::-1])
