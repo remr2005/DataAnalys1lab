@@ -5,13 +5,13 @@ from matrix import only_complex
 import fibonachi
 
 def main():
-    print("GCD for 8 and some number")
-    print(gcd_eight(int(input("Input number for gcd: "))))
-    print("Write a code that removes a vowel entered twice in the input string: ")
-    print(remove_twice(input("Input string")))
-    print("prime number generator")
-    print(gen(int(input("Input your number: "))))
-    print(only_complex([1, 2, 3.0, True, 1+2j], [0+0j,1+6j,3,2,False]))
+    # print("GCD for 8 and some number")
+    # print(gcd_eight(int(input("Input number for gcd: "))))
+    # print("Write a code that removes a vowel entered twice in the input string: ")
+    # print(remove_twice(input("Input string")))
+    # print("prime number generator")
+    # print(gen(int(input("Input your number: "))))
+    # print(only_complex([1, 2, 3.0, True, 1+2j], [0+0j,1+6j,3,2,False]))
     print([i for i in fibonachi.FibSums(5)])
 
 if  __name__ == "__main__":

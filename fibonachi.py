@@ -1,11 +1,10 @@
 from functools import lru_cache
 
 def FibSums(n):
-    sum = [0]
-    for i in range(n+1):
-        sum.append(0)
-        sum[i+1]+=sum[i] + fib_numb(i)
-        yield sum[i+1]
+    sum = 0
+    for i in range(1,n+1):
+        sum += fib_numb(i)
+        yield sum
     
     
 @lru_cache()        
