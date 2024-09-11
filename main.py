@@ -1,4 +1,4 @@
-from gcd import gcd_eight
+from gcd import gcd_eight, gcd_eight_2
 from twice_remove import remove_twice
 from prime_number_gen import gen
 from matrix import only_complex
@@ -36,9 +36,11 @@ def main():
     print(f"c = {d.coord}")
     print("Is the descr similar? (b and d)", b.is_similar(d))
     print(f"The multiply of vector (1,2,3) and (4,5,6): {vect.multiply((1,2,3),(4,5,6))}")
+    print()
     print(determinant.calculate_determinant([[0,2,3],
                                              [1,5,6],
                                              [7,8,9]]))
+    print(gcd_eight_2(int(input())))
 
 if  __name__ == "__main__":
     main()
