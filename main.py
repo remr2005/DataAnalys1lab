@@ -36,6 +36,7 @@ def main():
     print(f"c = {d.coord}")
     print("Is the descr similar? (b and d)", b.is_similar(d))
     print(f"The multiply of vector (1,2,3) and (4,5,6): {vect.multiply((1,2,3),(4,5,6))}")
+    print()
     print(determinant.calculate_determinant([[0,2,3],
                                              [1,5,6],
                                              [7,8,9]]))
