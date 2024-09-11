@@ -1,17 +1,24 @@
 from functools import lru_cache
 
-def FibSums(n):
+def FibSums(n:int):
     sum = 0
-    for i in range(1,n+1):
+    for i in range(n):
         sum += fib_numb(i)
         yield sum
     
     
 @lru_cache()        
-def fib_numb(n):
+def fib_numb(n: int):
     if n == 0: 
         return 0
     elif n ==1:
         return 1
     else:
         return fib_numb(n-2)+fib_numb(n-1)
+    
+def find_in_fibonachi(n: int):
+    j = 0
+    for i in FibSums(2_147_483_647):
+        if len(str(i))>len(str(n)):
+            return j
+        j+=1
