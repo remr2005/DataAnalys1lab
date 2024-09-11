@@ -16,6 +16,8 @@ def gcd_eight(a):
         s = s << 1
     return s
 
+def gcd_eight_2(a): return 1<<bin(a)[-3:].count("0")
+
 # i thought that was right decision, but i am anyway use -,
 # so this is incorrect
 # Binary algorithm for finding GCD(Greatest Common Divisor)

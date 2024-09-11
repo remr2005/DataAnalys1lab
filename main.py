@@ -1,4 +1,4 @@
-from gcd import gcd_eight
+from gcd import gcd_eight, gcd_eight_2
 from twice_remove import remove_twice
 from prime_number_gen import gen
 from matrix import only_complex
@@ -40,6 +40,7 @@ def main():
     print(determinant.calculate_determinant([[0,2,3],
                                              [1,5,6],
                                              [7,8,9]]))
+    print(gcd_eight_2(int(input())))
 
 if  __name__ == "__main__":
     main()
