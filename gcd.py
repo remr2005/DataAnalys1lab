@@ -16,7 +16,7 @@ def gcd_eight(a):
         s = s << 1
     return s
 
-# i thinked that was right decision, but i am anyway use -,
+# i thought that was right decision, but i am anyway use -,
 # so this is incorrect
 # Binary algorithm for finding GCD(Greatest Common Divisor)
 @lru_cache()
