@@ -1,15 +1,59 @@
 import bisect
+import random
+import math
+from time import time
 
+# Не работает на болших числах))))
 # Sundaram Sieve
 def gen(n):
-    arr = []
-    for i in range(1,int(((4*n+1)**0.5 - 1)//2+1)):
-        for j in range(i,int((2*n-i)//(2*i+1)+1)):
-            arr.append(i+j+2*i*j)
-    arr_2 = [2*i+1 for i in range(2*n) if i not in arr]
-    i = bisect.bisect_left(arr_2, n)
-    j = bisect.bisect_left(arr_2, n-1)
-    if abs(arr_2[i]-n)>abs(arr_2[j]-n):
-        return arr_2[j]
-    else:
-        return arr_2[i]
+    i = 0
+    print(time())
+    while (True):
+        if miller_rabin_test(n+i):
+            if slow_is_prime(n+i):
+                print(time())
+                return n+i
+            else:
+                print("error in miller test")
+        elif miller_rabin_test(n-i):
+            if slow_is_prime(n-i):
+                print(time())
+                return n-i
+            else:
+                print("error in miller test")
+        i+=1
+    
+def slow_is_prime(n):
+    for i in range(2,int(n**0.5)):
+        if n%i==0:
+            return False
+    return True
+
+
+def miller_rabin_test(n):
+    s = 0
+    d = n - 1
+    while d % 2 == 0:
+        d //= 2
+        s += 1
+    
+    # Основной цикл теста
+    for _ in range(int(math.log2(n))):
+        f = False
+        a = random.randint(2, n - 2)
+        x = pow(a, d, n) 
+        
+        if x == 1 or x == n - 1:
+            continue
+        for _ in range(s - 1):
+            x = pow(x, 2, n)
+            if x == n - 1:
+                f = True
+                break
+            elif x == 1:
+                return False
+        
+        if not f:
+            return False
+    
+    return True
