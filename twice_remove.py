@@ -1,12 +1,30 @@
-def remove_twice(s: str):
-    dict_char = {"у":0,"е":0,"ы":0,"а":0,"о":0,"я":0,"и":0,"ю":0,"ё":0, "э":0,}
+def remove_twice(s: str) -> str:
+    vowels = "ёуеыаоэяию"
+    i = 0
     res = ""
-    for i in s:
-        try:
-            if dict_char[i]==1:
-                continue
-            dict_char[i]+=1
-            res += i
-        except:
-            res += i
+    while i < len(s):
+        if s[i] in vowels:
+            if i+1==len(s):break
+            while s[i]==s[i+1]:
+                i+=1
+                if i+1==len(s):break
+        res+=s[i]
+        i+=1
     return res
+
+# def remove_twice(s: str) -> str:
+#     vowels = "ёуеыаоэяию"
+#     i = 0
+#     res = ""
+#     while i < len(s):
+#         if s[i] in vowels:
+#             j = i
+#             try:
+#                 while s[j]==s[j+1]:
+#                     j+=1
+#             except Exception:
+#                 i=j
+#             i=j
+#         res+=s[i]
+#         i+=1
+#     return res

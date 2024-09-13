@@ -18,7 +18,9 @@ def fib_numb(n: int):
     
 def find_in_fibonachi(n: int):
     j = 0
-    for i in FibSums(2_147_483_647):
-        if len(str(i))>len(str(n)):
+    fib_gen = FibSums(n)
+    while True:
+        i = next(fib_gen)
+        if len(str(i)) > len(str(n)):
             return j
-        j+=1
+        j += 1
