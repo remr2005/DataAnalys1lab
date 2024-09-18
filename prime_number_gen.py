@@ -31,12 +31,15 @@ def slow_is_prime(n):
 
 
 def miller_rabin_test(n):
+    if n == 2 or n == 3:
+        return True  # 2 и 3 — простые числа
+    if n < 2 or n % 2 == 0:
+        return False
     s = 0
     d = n - 1
     while d % 2 == 0:
         d //= 2
         s += 1
-    
     # Основной цикл теста
     for _ in range(int(math.log2(n))):
         f = False
@@ -52,8 +55,6 @@ def miller_rabin_test(n):
                 break
             elif x == 1:
                 return False
-        
         if not f:
             return False
-    
     return True

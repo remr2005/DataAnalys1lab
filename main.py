@@ -7,8 +7,10 @@ import fibonachi
 from descr import Descr
 import vect
 import determinant
+import prime_number_gen
 
 def main():
+    print(prime_number_gen.miller_rabin_test(14))
     # print("GCD for 8 and some number")
     # print(gcd_eight(int(input("Input number for gcd: "))))
     # print("Write a code that removes a vowel entered twice in the input string: ")
@@ -17,10 +19,12 @@ def main():
     # print(gen(int(input("Input your number: "))))
 
     # print(only_complex([1, 2, 3.0, True, 1+2j], [0+0j,1+6j,3,2,False]))
-    a=[i for i in fibonachi.FibSums(int(input("Input N for Fibonachi sums: ")))]
-    print(a)
-    c=fibonachi.find_in_fibonachi(int(input("enter your number")))
-    print(a[c])
+    # a=[i for i in fibonachi.FibSums(int(input("Input N for Fibonachi sums: ")))]
+    # b=[i for i in fibonachi.FibSums2(int(input("Input N for Fibonachi sums: ")))]
+    # print(a)
+    # print(b)
+    # c=fibonachi.find_in_fibonachi(int(input("enter your number")))
+    # print(a[c])
     # a = Frac(-1,-3)
     # print("Sum 1/3 of -1/2")
     # a.sum(Frac(1,-2))
@@ -31,7 +35,7 @@ def main():
     # print("Mne len' perevodit' poetomu skaju chto eto obrashenie")
     # print(a.obrash())
     # b = Descr(((0,0),(0,2),(2,2),(2,0)))
-    # c = Descr(((0,0),(0,2),(2,2),(2,0)))
+    # c = Descr(((0,0),(0,2),(2,2),(2,0)))14
     # print(f"b = {b.coord}")
     # print(f"c = {c.coord}")
     # print("Is the descr equal? (b and c)", b.is_equal(c))

@@ -6,6 +6,18 @@ def FibSums(n:int):
         sum += fib_numb(i)
         yield sum
     
+def FibSums(n: int):
+    sum = 0
+    fr = 0
+    sc = 1
+    for i in range(n):
+        if i == 0:
+            yield 0
+        else:
+            sum += fr
+            yield sum
+        fr, sc = sc, fr + sc
+    
     
 @lru_cache()        
 def fib_numb(n: int):
